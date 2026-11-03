@@ -10,6 +10,7 @@ repo: status
 sites:
   - name: Webbplats (attesteo.com)
     url: https://attesteo.com
+    icon: https://raw.githubusercontent.com/attesteo-ab/status/HEAD/assets/quill.svg
     maxResponseTime: 3000
 
 status-website:
