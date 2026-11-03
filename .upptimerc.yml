@@ -26,13 +26,13 @@ status-website:
   name: Attesteo status
   metaTags:
     - name: description
-      content: Current status, response times and incidents for Attesteo's services, updated automatically every five minutes.
+      content: Current status and incidents for Attesteo's services, checked automatically every five minutes.
   logoUrl: https://raw.githubusercontent.com/attesteo-ab/status/HEAD/assets/logo.svg
   hideNavTitle: true
   faviconSvg: https://attesteo-ab.github.io/status/quill.svg
   themeUrl: https://attesteo-ab.github.io/status/attesteo.css
   introTitle: "**Attesteo service status.**"
-  introMessage: Current status, response times and incidents for Attesteo's services, updated automatically every five minutes. Planned maintenance is announced here in advance. Questions? Write to [support@attesteo.com](mailto:support@attesteo.com).
+  introMessage: Current status and incidents for Attesteo's services, checked automatically every five minutes. Planned maintenance is announced here in advance. Questions? Write to [support@attesteo.com](mailto:support@attesteo.com).
   navbar: []
 
 # Status page strings are Upptime's English defaults; only the footer is overridden.
