@@ -10,7 +10,7 @@
   --muted: #596987;
   --line: #dce5f2;
 
-  --body-background-color: #f7faff;
+  --body-background-color: #ffffff;
   --body-text-color: var(--ink);
   --card-background-color: #ffffff;
   --card-border-color: var(--line);
@@ -48,6 +48,8 @@ html body {
   line-height: 1.7;
   padding-bottom: 0;
   -webkit-font-smoothing: antialiased;
+  /* The site's daylight sky at the top, fading to white. */
+  background: linear-gradient(180deg, #eaf5fc 0, #f3f9fe 320px, #ffffff 560px) no-repeat, #fff;
 }
 #sapper .container { max-width: 880px; padding: 0 32px; }
 #sapper h1, #sapper h2, #sapper h3, #sapper h4 { color: var(--ink); font-weight: 800; letter-spacing: -.035em; }
@@ -55,10 +57,10 @@ html body {
 #sapper a { color: var(--blue); }
 
 /* Top bar: logo and name only */
-#sapper nav { border-bottom: 1px solid var(--line); background: #fff; margin-bottom: 56px; padding: 0; }
+#sapper nav { border-bottom: 0; background: transparent; margin-bottom: 44px; padding: 0; }
 #sapper nav .container { display: flex; align-items: center; justify-content: space-between; min-height: 84px; }
 #sapper nav .logo { float: none; display: flex; align-items: center; gap: 14px; margin: 0; padding: 0; font-size: 21px; font-weight: 800; letter-spacing: -.035em; color: var(--ink); }
-#sapper nav .logo img { height: 36px; margin: 0; border-radius: 0; }
+#sapper nav .logo img { height: 44px; width: auto; margin: 0; border-radius: 0; }
 #sapper nav ul { display: none; }
 
 /* Intro */
@@ -124,7 +126,7 @@ footer a { color: #fff; }
   #sapper .container { padding: 0 20px; }
   #sapper nav { margin-bottom: 36px; }
   #sapper nav .container { min-height: 68px; }
-  #sapper nav .logo { font-size: 18px; } #sapper nav .logo img { height: 30px; }
+  #sapper nav .logo img { height: 36px; }
   #sapper header h1 { font-size: 34px; }
   #sapper article { padding: 16px 18px; }
   #sapper article.graph { background-image: linear-gradient(90deg, #fff 0%, #fff 30%, rgba(255,255,255,.7) 100%), var(--background); }
