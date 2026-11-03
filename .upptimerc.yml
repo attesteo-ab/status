@@ -30,7 +30,8 @@ status-website:
   logoUrl: https://raw.githubusercontent.com/attesteo-ab/status/HEAD/assets/logo.svg
   hideNavTitle: true
   faviconSvg: https://attesteo-ab.github.io/status/quill.svg
-  themeUrl: https://attesteo-ab.github.io/status/attesteo.css
+  # Bump the version query after every change to attesteo.css so browsers fetch it again.
+  themeUrl: https://attesteo-ab.github.io/status/attesteo.css?v=2026-11-03-1
   introTitle: "**Attesteo service status.**"
   introMessage: Current status and incidents for Attesteo's services, checked automatically every five minutes. Planned maintenance is announced here in advance. Questions? Write to [support@attesteo.com](mailto:support@attesteo.com).
   navbar: []
