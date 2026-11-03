@@ -24,7 +24,8 @@ status-website:
   # exists in DNS. Then: remove baseUrl and set `cname: status.attesteo.com`.
   baseUrl: /status
   name: Attesteo
-  logoUrl: https://raw.githubusercontent.com/attesteo-ab/status/HEAD/assets/quill.svg
+  logoUrl: https://raw.githubusercontent.com/attesteo-ab/status/HEAD/assets/logo.svg
+  hideNavTitle: true
   faviconSvg: https://attesteo-ab.github.io/status/quill.svg
   themeUrl: https://attesteo-ab.github.io/status/attesteo.css
   introTitle: "**Attesteo service status.**"
