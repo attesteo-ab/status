@@ -29,11 +29,7 @@ status-website:
   themeUrl: https://attesteo-ab.github.io/status/attesteo.css
   introTitle: "**Driftstatus för Attesteo.**"
   introMessage: Här visas aktuell drift, svarstider och incidenter för Attesteos tjänster, uppdaterat automatiskt var femte minut. Planerat underhåll meddelas här i förväg. Frågor? Skriv till [support@attesteo.com](mailto:support@attesteo.com).
-  navbar:
-    - title: Status
-      href: /
-    - title: attesteo.com
-      href: https://attesteo.com
+  navbar: []
 
 # Swedish strings for the status page (keys from upptime/status-page/i18n.yml).
 i18n:
