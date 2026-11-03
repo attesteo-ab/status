@@ -1,4 +1,5 @@
-/* Attesteo theme for the Upptime status page. Brand tokens from attesteo.com/styles.css. */
+/* Attesteo theme for the Upptime status page. Brand tokens from attesteo.com/styles.css.
+   This sheet loads before Upptime's global.css, so rules that must win are scoped under #sapper. */
 @font-face{font-family:Manrope;src:url('manrope-400.ttf') format('truetype');font-weight:400;font-display:swap}
 @font-face{font-family:Manrope;src:url('manrope-700.ttf') format('truetype');font-weight:700;font-display:swap}
 @font-face{font-family:Manrope;src:url('manrope-800.ttf') format('truetype');font-weight:800;font-display:swap}
@@ -26,7 +27,7 @@
   --tag-up-background-color: #1f9d66;
   --tag-degraded-background-color: #e0a100;
   --tag-down-background-color: #d64545;
-  --change-background-color: #fff4d6;
+  --change-background-color: #e6ecfd;
 
   --error-button-border-color: var(--blue);
   --error-button-background-color: var(--blue);
@@ -41,27 +42,91 @@
   --graph-filter: none;
 }
 
-body {
+/* Base */
+html body {
   font-family: Manrope, 'Segoe UI', sans-serif;
   line-height: 1.7;
+  padding-bottom: 0;
+  -webkit-font-smoothing: antialiased;
 }
-h1, h2, h3, h4 {
-  font-weight: 800;
-  letter-spacing: -.04em;
-  color: var(--ink);
+#sapper .container { max-width: 880px; padding: 0 32px; }
+#sapper h1, #sapper h2, #sapper h3, #sapper h4 { color: var(--ink); font-weight: 800; letter-spacing: -.035em; }
+#sapper p { color: var(--muted); }
+#sapper a { color: var(--blue); }
+
+/* Top bar: logo and name only */
+#sapper nav { border-bottom: 1px solid var(--line); background: #fff; margin-bottom: 56px; padding: 0; }
+#sapper nav .container { display: flex; align-items: center; justify-content: space-between; min-height: 84px; }
+#sapper nav .logo { float: none; display: flex; align-items: center; gap: 14px; margin: 0; padding: 0; font-size: 21px; font-weight: 800; letter-spacing: -.035em; color: var(--ink); }
+#sapper nav .logo img { height: 36px; margin: 0; border-radius: 0; }
+#sapper nav ul { display: none; }
+
+/* Intro */
+#sapper header { margin-bottom: 44px; }
+#sapper header h1 { font-size: clamp(38px, 5.4vw, 58px); line-height: 1.06; letter-spacing: -.055em; margin: 0 0 18px; }
+#sapper header h1 strong { font-weight: 800; }
+#sapper header p.lead { font-size: 17px; line-height: 1.75; max-width: 600px; margin: 0; }
+#sapper header p.lead a { color: var(--blue); text-decoration: none; border-bottom: 1px solid #a8c3e4; }
+#sapper header p.lead a:hover { border-color: var(--blue); }
+
+/* Section headings and the period switch */
+#sapper main h2 { font-size: 24px; margin: 0 0 14px; }
+#sapper main section + h2, #sapper main section + .f { margin-top: 44px; }
+#sapper .f.changed { align-items: baseline; margin-bottom: 14px; }
+#sapper form.r label { margin-left: 4px; padding: 5px 11px; border-radius: 100px; font-size: 13px; color: var(--muted); cursor: pointer; transition: background .15s, color .15s; }
+#sapper form.r label:hover { color: var(--ink); }
+#sapper form.r input:checked + label { color: var(--blue); background: #e6ecfd; font-weight: 700; }
+
+/* Cards */
+#sapper article { border-radius: 14px; border: 1px solid var(--line); background: #fff; padding: 20px 24px; box-shadow: 0 10px 30px -24px #14204466; }
+#sapper article + article { margin-top: 12px; }
+#sapper article.up, #sapper article.down, #sapper article.degraded { border-left-width: 4px; border-left-style: solid; }
+#sapper article h4 { font-size: 17px; font-weight: 700; letter-spacing: -.02em; margin: 0 0 6px; display: flex; align-items: center; }
+#sapper article h4 a { color: var(--ink); }
+#sapper article h4 .icon { height: 18px; margin-right: 10px; transform: none; }
+#sapper article > div { font-size: 14px; color: var(--muted); line-height: 1.6; }
+#sapper article .data { font-weight: 700; color: var(--ink); padding: 0; background: transparent; border-radius: 0; }
+#sapper .changed + section .data { background: transparent; color: var(--blue); }
+/* Soften the generated response-time graph so it reads as a backdrop. */
+#sapper article.graph {
+  background-image: linear-gradient(90deg, #fff 0%, #fff 42%, rgba(255,255,255,.55) 100%), var(--background);
+  background-size: 100% 100%, auto 100%;
+  background-repeat: no-repeat;
+  background-position: center, right center;
 }
-h1 { font-size: 2.2em; }
-h3 { opacity: 1; color: var(--muted); font-weight: 700; letter-spacing: -.02em; }
-p { color: var(--muted); }
-a { color: var(--blue); }
-nav a { color: var(--ink); }
-nav ul { display: none; }
-nav .logo { font-weight: 800; letter-spacing: -.03em; }
-article {
-  border-radius: 12px;
-  box-shadow: 0 1px 2px #14204408;
+#sapper article.down-active { background: var(--down-background-color); }
+#sapper article .f { gap: 12px; }
+#sapper article .f.r a { font-size: 14px; font-weight: 700; }
+
+/* Status tag */
+#sapper .tag { border-radius: 100px; padding: 4px 11px; font-size: 12px; font-weight: 700; letter-spacing: .01em; }
+
+/* Detail pages (history, incident) */
+#sapper main > section > h1 { font-size: clamp(30px, 4vw, 42px); letter-spacing: -.05em; margin-bottom: 12px; }
+#sapper dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 24px; margin: 0 0 28px; font-size: 15px; }
+#sapper dl dt { font-weight: 400; color: var(--muted); }
+#sapper dl dd { margin: 0; font-weight: 700; color: var(--ink); }
+#sapper main h3 { font-size: 14px; font-weight: 700; color: var(--muted); opacity: 1; margin: 24px 0 10px; }
+
+/* Footer: the site's midnight band */
+body > footer, #sapper > footer, footer {
+  margin-top: 88px; padding: 38px 32px 42px; text-align: center; opacity: 1;
+  color: #c9d3ea; font-size: 13px;
+  background: radial-gradient(ellipse at 85% 24%, #383882, transparent 56%), linear-gradient(135deg, #0d1736, #151b43 65%, #253563);
 }
-article.up, article.down, article.degraded { border-left-width: 4px; }
-.tag { border-radius: 100px; padding: .3rem .65rem; font-weight: 700; }
-a.error-button, .submit-button { border-radius: 100px; font-weight: 800; }
-footer, footer p { color: var(--muted); font-size: 14px; }
+footer p { color: inherit; margin: 0; }
+footer a { color: #fff; }
+
+/* Buttons */
+#sapper a.error-button, #sapper .submit-button { border-radius: 100px; font-weight: 800; padding: 12px 22px; }
+
+@media (max-width: 600px) {
+  #sapper .container { padding: 0 20px; }
+  #sapper nav { margin-bottom: 36px; }
+  #sapper nav .container { min-height: 68px; }
+  #sapper nav .logo { font-size: 18px; } #sapper nav .logo img { height: 30px; }
+  #sapper header h1 { font-size: 34px; }
+  #sapper article { padding: 16px 18px; }
+  #sapper article.graph { background-image: linear-gradient(90deg, #fff 0%, #fff 30%, rgba(255,255,255,.7) 100%), var(--background); }
+  footer { margin-top: 56px; }
+}
