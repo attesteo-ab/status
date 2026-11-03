@@ -1,31 +1,97 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Attesteo service status, powered by Upptime (https://upptime.js.org).
+# Checks run as GitHub Actions in this repository; the page is served by GitHub Pages.
 
+owner: attesteo-ab
+repo: status
+
+# One entry per component shown on the status page.
+# Add the signing page, admin app, API health, identity service and webhooks
+# as their production hostnames go live. Secrets go in as $NAME, never inline.
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: Webbplats (attesteo.com)
+    url: https://attesteo.com
+    maxResponseTime: 3000
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  # Served at https://attesteo-ab.github.io/status until status.attesteo.com
+  # exists in DNS. Then: remove baseUrl and set `cname: status.attesteo.com`.
+  baseUrl: /status
+  name: Attesteo
+  logoUrl: https://raw.githubusercontent.com/attesteo-ab/status/HEAD/assets/quill.svg
+  introTitle: "**Driftstatus för Attesteo.**"
+  introMessage: Här visas aktuell drift, svarstider och incidenter för Attesteos tjänster, uppdaterat automatiskt var femte minut. Planerat underhåll meddelas här i förväg. Frågor? Skriv till [support@attesteo.com](mailto:support@attesteo.com).
   navbar:
     - title: Status
       href: /
+    - title: attesteo.com
+      href: https://attesteo.com
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+# Swedish strings for the status page (keys from upptime/status-page/i18n.yml).
+i18n:
+  locale: sv-SE
+  activeIncidents: Pågående incidenter
+  allSystemsOperational: Alla system fungerar normalt
+  incidentReport: "Incident #$NUMBER, rapport →"
+  activeIncidentSummary: Öppnad $DATE, $POSTS uppdateringar
+  incidentTitle: Incident $NUMBER
+  incidentDetails: Incidentdetaljer
+  incidentFixed: Åtgärdad
+  incidentOngoing: Pågår
+  incidentOpenedAt: Öppnad
+  incidentClosedAt: Stängd
+  incidentViewOnGitHub: Visa och prenumerera på GitHub
+  incidentCommentSummary: Skrivet $DATE av $AUTHOR
+  incidentBack: ← Tillbaka till alla incidenter
+  pastIncidents: Tidigare incidenter
+  pastIncidentsResolved: Löst på $MINUTES minuter, $POSTS uppdateringar
+  liveStatus: Aktuell status
+  overallUptime: "Tillgänglighet: $UPTIME"
+  overallUptimeTitle: Tillgänglighet
+  averageResponseTime: "Genomsnittlig svarstid: $TIME ms"
+  averageResponseTimeTitle: Genomsnittlig svarstid
+  sevelDayResponseTime: Svarstid senaste 7 dagarna
+  responseTimeMs: Svarstid (ms)
+  up: Fungerar
+  down: Nere
+  degraded: Störning
+  ms: ms
+  loading: Laddar
+  navGitHub: GitHub
+  footer: Sidan är [öppen källkod]($REPO) och drivs med [Upptime](https://upptime.js.org). © Attesteo AB
+  rateLimitExceededTitle: För många förfrågningar
+  rateLimitExceededIntro: Du har gjort fler förfrågningar än GitHub tillåter per timme. Vänta en stund, eller lägg in en personlig GitHub-token för att fortsätta.
+  rateLimitExceededWhatDoesErrorMean: Vad betyder felet?
+  rateLimitExceededErrorMeaning: Sidan hämtar aktuell status via GitHubs API. GitHub tillåter 60 förfrågningar per timme och IP-adress, och den gränsen är nådd.
+  rateLimitExceededErrorHowCanFix: Hur löser jag det?
+  rateLimitExceededErrorFix: Vänta en timme så återställs gränsen. Alternativt kan du lägga in en personlig GitHub-token, som ger 5 000 förfrågningar per timme.
+  rateLimitExceededGeneratePAT: Så skapar du en personlig token
+  rateLimitExceededHasSet: Du har en personlig token inlagd.
+  rateLimitExceededRemoveToken: Ta bort token
+  rateLimitExceededGitHubPAT: Personlig GitHub-token
+  rateLimitExceededCopyPastePAT: Klistra in din token
+  rateLimitExceededSaveToken: Spara token
+  errorTitle: Något gick fel
+  errorIntro: Det gick inte att hämta den senaste statusen.
+  errorText: Prova igen om en stund.
+  errorHome: Till startsidan
+  pastScheduledMaintenance: Tidigare planerat underhåll
+  scheduledMaintenance: Planerat underhåll
+  scheduledMaintenanceSummaryStarted: Började $DATE, $DURATION minuter
+  scheduledMaintenanceSummaryStarts: Börjar $DATE, $DURATION minuter
+  startedAt: Började
+  startsAt: Börjar
+  duration: Varaktighet
+  durationMin: $DURATION minuter
+  incidentCompleted: Avslutat
+  incidentScheduled: Planerat
+  duration24H: 24 tim
+  duration7D: 7 dagar
+  duration30D: 30 dagar
+  duration1Y: 1 år
+  durationAll: allt
+
+# Keep the repository metadata as we set it.
+skipDescriptionUpdate: true
+skipTopicsUpdate: true
