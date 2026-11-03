@@ -23,7 +23,10 @@ status-website:
   # Served at https://attesteo-ab.github.io/status until status.attesteo.com
   # exists in DNS. Then: remove baseUrl and set `cname: status.attesteo.com`.
   baseUrl: /status
-  name: Attesteo
+  name: Attesteo status
+  metaTags:
+    - name: description
+      content: Current status, response times and incidents for Attesteo's services, updated automatically every five minutes.
   logoUrl: https://raw.githubusercontent.com/attesteo-ab/status/HEAD/assets/logo.svg
   hideNavTitle: true
   faviconSvg: https://attesteo-ab.github.io/status/quill.svg
@@ -34,7 +37,11 @@ status-website:
 
 # Status page strings are Upptime's English defaults; only the footer is overridden.
 i18n:
-  footer: © 2026 Attesteo AB
+  footer: © 2026 Attesteo AB · [attesteo.com](https://attesteo.com) · [support@attesteo.com](mailto:support@attesteo.com)
+
+# Response-time chart on the detail pages, in brand colours.
+graphBackgroundColor: "#e3e9fd"
+graphBorderColor: "#3155ed"
 
 # Keep the repository metadata as we set it.
 skipDescriptionUpdate: true
