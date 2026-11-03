@@ -2,7 +2,7 @@
   {
     "name": "Webbplats (attesteo.com)",
     "url": "https://attesteo.com",
-    "icon": "https://icons.duckduckgo.com/ip3/attesteo.com.ico",
+    "icon": "https://raw.githubusercontent.com/attesteo-ab/status/HEAD/assets/quill.svg",
     "slug": "webbplats-attesteo-com",
     "status": "up",
     "uptime": "100.00%",
@@ -10,11 +10,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 151,
-    "timeDay": 151,
-    "timeWeek": 151,
-    "timeMonth": 151,
-    "timeYear": 151,
+    "time": 240,
+    "timeDay": 240,
+    "timeWeek": 240,
+    "timeMonth": 240,
+    "timeYear": 240,
     "dailyMinutesDown": {}
   }
 ]
