@@ -103,6 +103,20 @@ html body {
 #sapper article .f { gap: 12px; }
 #sapper article .f.r a { font-size: 14px; font-weight: 700; }
 
+/* Like most status pages: current state per component, incidents and maintenance.
+   No uptime percentages, response times or graphs. Remove this block to show them again. */
+#sapper .f.changed form.r { display: none; }
+#sapper section.live-status article > div { display: none; }
+#sapper section.live-status article.graph { background-image: none; padding: 18px 24px; }
+#sapper section.live-status article h4 { margin: 0; }
+#sapper section.live-status article h4::after {
+  content: "Operational"; margin-left: auto; font-size: 12px; font-weight: 700; letter-spacing: .01em;
+  padding: 4px 11px; border-radius: 100px; color: #fff; background: var(--tag-up-background-color);
+}
+#sapper section.live-status article.degraded h4::after { content: "Degraded"; background: var(--tag-degraded-background-color); }
+#sapper section.live-status article.down h4::after { content: "Down"; background: var(--tag-down-background-color); }
+#sapper main > section > dl, #sapper main > section > section:has(canvas) { display: none; }
+
 /* Status tag */
 #sapper .tag { border-radius: 100px; padding: 4px 11px; font-size: 12px; font-weight: 700; letter-spacing: .01em; }
 
