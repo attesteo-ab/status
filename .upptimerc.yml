@@ -37,6 +37,7 @@ status-website:
 
 # Status page strings are Upptime's English defaults; only the footer is overridden.
 i18n:
+  liveStatus: Components
   footer: © 2026 Attesteo AB · [attesteo.com](https://attesteo.com) · [support@attesteo.com](mailto:support@attesteo.com)
 
 # Response-time chart on the detail pages, in brand colours.
