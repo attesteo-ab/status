@@ -51,6 +51,9 @@ html body {
   /* The site's daylight sky at the top, fading to white. */
   background: linear-gradient(180deg, #eaf5fc 0, #f3f9fe 320px, #ffffff 560px) no-repeat, #fff;
 }
+/* Keep the footer at the bottom of tall viewports. */
+#sapper { min-height: 100vh; display: flex; flex-direction: column; }
+#sapper > main { flex: 1 0 auto; width: 100%; }
 #sapper .container { max-width: 880px; padding: 0 32px; }
 #sapper h1, #sapper h2, #sapper h3, #sapper h4 { color: var(--ink); font-weight: 800; letter-spacing: -.035em; }
 #sapper p { color: var(--muted); }
