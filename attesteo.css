@@ -115,7 +115,9 @@ html body {
 }
 #sapper section.live-status article.degraded h4::after { content: "Degraded"; background: var(--tag-degraded-background-color); }
 #sapper section.live-status article.down h4::after { content: "Down"; background: var(--tag-down-background-color); }
-#sapper main > section > dl, #sapper main > section > section:has(canvas) { display: none; }
+/* Component cards are not links; the per-component history page shows nothing but the name. */
+#sapper section.live-status article h4 a { pointer-events: none; cursor: default; }
+#sapper main dl, #sapper main canvas, #sapper main section:has(canvas), #sapper main h2 + div:has(canvas) { display: none; }
 
 /* Status tag */
 #sapper .tag { border-radius: 100px; padding: 4px 11px; font-size: 12px; font-weight: 700; letter-spacing: .01em; }
