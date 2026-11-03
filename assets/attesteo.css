@@ -1,0 +1,65 @@
+/* Attesteo theme for the Upptime status page. Brand tokens from attesteo.com/styles.css. */
+@font-face{font-family:Manrope;src:url('manrope-400.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:Manrope;src:url('manrope-700.ttf') format('truetype');font-weight:700;font-display:swap}
+@font-face{font-family:Manrope;src:url('manrope-800.ttf') format('truetype');font-weight:800;font-display:swap}
+
+:root {
+  --ink: #142044;
+  --blue: #3155ed;
+  --muted: #596987;
+  --line: #dce5f2;
+
+  --body-background-color: #f7faff;
+  --body-text-color: var(--ink);
+  --card-background-color: #ffffff;
+  --card-border-color: var(--line);
+  --nav-background-color: #ffffff;
+  --nav-border-bottom-color: var(--line);
+  --nav-current-border-bottom-color: var(--blue);
+
+  --up-border-left-color: #1f9d66;
+  --degraded-border-left-color: #e0a100;
+  --down-border-left-color: #d64545;
+  --down-background-color: #fff1f1;
+
+  --tag-color: #ffffff;
+  --tag-up-background-color: #1f9d66;
+  --tag-degraded-background-color: #e0a100;
+  --tag-down-background-color: #d64545;
+  --change-background-color: #fff4d6;
+
+  --error-button-border-color: var(--blue);
+  --error-button-background-color: var(--blue);
+  --error-button-color: #ffffff;
+  --submit-button-border-color: var(--blue);
+  --submit-button-background-color: var(--blue);
+  --submit-button-color: #ffffff;
+
+  --code-color: var(--ink);
+  --code-background-color: #eaf0fb;
+  --graph-opacity: 1;
+  --graph-filter: none;
+}
+
+body {
+  font-family: Manrope, 'Segoe UI', sans-serif;
+  line-height: 1.7;
+}
+h1, h2, h3, h4 {
+  font-weight: 800;
+  letter-spacing: -.04em;
+  color: var(--ink);
+}
+h1 { font-size: 2.2em; }
+h3 { opacity: 1; color: var(--muted); font-weight: 700; letter-spacing: -.02em; }
+p { color: var(--muted); }
+a { color: var(--blue); }
+nav a { color: var(--ink); }
+article {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px #14204408;
+}
+article.up, article.down, article.degraded { border-left-width: 4px; }
+.tag { border-radius: 100px; padding: .3rem .65rem; font-weight: 700; }
+a.error-button, .submit-button { border-radius: 100px; font-weight: 800; }
+footer, footer p { color: var(--muted); font-size: 14px; }

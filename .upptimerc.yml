@@ -19,6 +19,8 @@ status-website:
   baseUrl: /status
   name: Attesteo
   logoUrl: https://raw.githubusercontent.com/attesteo-ab/status/HEAD/assets/quill.svg
+  faviconSvg: https://attesteo-ab.github.io/status/quill.svg
+  themeUrl: https://attesteo-ab.github.io/status/attesteo.css
   introTitle: "**Driftstatus för Attesteo.**"
   introMessage: Här visas aktuell drift, svarstider och incidenter för Attesteos tjänster, uppdaterat automatiskt var femte minut. Planerat underhåll meddelas här i förväg. Frågor? Skriv till [support@attesteo.com](mailto:support@attesteo.com).
   navbar:
@@ -26,8 +28,6 @@ status-website:
       href: /
     - title: attesteo.com
       href: https://attesteo.com
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
 
 # Swedish strings for the status page (keys from upptime/status-page/i18n.yml).
 i18n:
@@ -60,7 +60,7 @@ i18n:
   ms: ms
   loading: Laddar
   navGitHub: GitHub
-  footer: Sidan är [öppen källkod]($REPO) och drivs med [Upptime](https://upptime.js.org). © Attesteo AB
+  footer: © 2026 Attesteo AB
   rateLimitExceededTitle: För många förfrågningar
   rateLimitExceededIntro: Du har gjort fler förfrågningar än GitHub tillåter per timme. Vänta en stund, eller lägg in en personlig GitHub-token för att fortsätta.
   rateLimitExceededWhatDoesErrorMean: Vad betyder felet?
