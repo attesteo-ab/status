@@ -55,6 +55,8 @@ h3 { opacity: 1; color: var(--muted); font-weight: 700; letter-spacing: -.02em; 
 p { color: var(--muted); }
 a { color: var(--blue); }
 nav a { color: var(--ink); }
+nav ul { display: none; }
+nav .logo { font-weight: 800; letter-spacing: -.03em; }
 article {
   border-radius: 12px;
   box-shadow: 0 1px 2px #14204408;
