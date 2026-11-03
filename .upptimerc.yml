@@ -12,6 +12,12 @@ sites:
     url: https://attesteo.com
     icon: https://raw.githubusercontent.com/attesteo-ab/status/HEAD/assets/quill.svg
     maxResponseTime: 3000
+  # BankID publishes its own status on an Atlassian Statuspage. We read its
+  # summary API: anything but "indicator":"none" means BankID reports a problem.
+  - name: BankID (extern)
+    url: https://status.bankid.com/api/v2/status.json
+    icon: https://www.bankid.com/favicon.ico
+    __dangerous__body_degraded_if_text_missing: '"indicator":"none"'
 
 status-website:
   # Served at https://attesteo-ab.github.io/status until status.attesteo.com
