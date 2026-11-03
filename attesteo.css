@@ -51,6 +51,9 @@ html body {
   /* The site's daylight sky at the top, fading to white. */
   background: linear-gradient(180deg, #eaf5fc 0, #f3f9fe 320px, #ffffff 560px) no-repeat, #fff;
 }
+/* Keep the footer at the bottom of tall viewports. */
+#sapper { min-height: 100vh; display: flex; flex-direction: column; }
+#sapper > main { flex: 1 0 auto; width: 100%; }
 #sapper .container { max-width: 880px; padding: 0 32px; }
 #sapper h1, #sapper h2, #sapper h3, #sapper h4 { color: var(--ink); font-weight: 800; letter-spacing: -.035em; }
 #sapper p { color: var(--muted); }
@@ -117,7 +120,8 @@ body > footer, #sapper > footer, footer {
   background: radial-gradient(ellipse at 85% 24%, #383882, transparent 56%), linear-gradient(135deg, #0d1736, #151b43 65%, #253563);
 }
 footer p { color: inherit; margin: 0; }
-footer a { color: #fff; }
+footer a { color: #fff; text-decoration: none; border-bottom: 1px solid #ffffff55; }
+footer a:hover { border-color: #fff; }
 
 /* Buttons */
 #sapper a.error-button, #sapper .submit-button { border-radius: 100px; font-weight: 800; padding: 12px 22px; }
